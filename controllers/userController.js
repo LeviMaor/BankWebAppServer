@@ -47,7 +47,8 @@ const getUser = asyncHandler(async (req, res) => {
     res.json({
         email: user.email,
         balance: user.balance,
-        roles: user.roles
+        roles: user.roles,
+        isVerified: user.isVerified
     });
 });
 

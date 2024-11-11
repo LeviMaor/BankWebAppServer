@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const verifyAdmin = require('../middleware/verifyAdmin');
+const verifyUser = require('../middleware/verifyUser');
 const {
     getTransactions,
     createTransaction,
@@ -8,8 +10,6 @@ const {
     getTransactionsByUserId
 } = require('../controllers/transactionController');
 
-const verifyAdmin = require('../middleware/verifyAdmin');
-const verifyUser = require('../middleware/verifyUser');
 
 // User-specific routes
 router.get('/', verifyUser, getTransactions);
